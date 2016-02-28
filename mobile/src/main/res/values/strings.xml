@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Nearest Noiseless Prom</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="ungranted">Since location access has not been granted, this app will not be able to discover beacons when in the background.</string>
+</resources>
