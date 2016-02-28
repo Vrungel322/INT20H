@@ -71,34 +71,6 @@ public class SettingsFragment extends Fragment implements SwichChanger{
                 startActivity(intent);
             }
         });
-//        swNFC = (Switch) view.findViewById(R.id.swNFC);
-//        chechNFC(view, nfcAdapter, swNFC);
-//        swNFC.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-//                    builder.setTitle("NFC... what next ?");
-//                    builder.setMessage("Open NFC settings ?");
-//                    builder.setPositiveButton("Opent it", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            Intent intent = new Intent(Settings.ACTION_NFC_SETTINGS);
-//                            startActivity(intent);
-//                        }
-//                    });
-//                    builder.setNeutralButton("Close pls", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            dialog.cancel();
-//                            chechNFC(view, nfcAdapter, swNFC);
-//                        }
-//                    });
-//                    AlertDialog alertDialog = builder.create();
-//                    alertDialog.show();
-
-//
-//            }
-//        });
     }
 
    // chechNFC(view, nfcAdapter, swNFC);
