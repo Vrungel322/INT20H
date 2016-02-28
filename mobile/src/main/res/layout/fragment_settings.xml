@@ -42,13 +42,14 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:gravity="center"
                 android:paddingLeft="16dp"
+                android:paddingTop="8dp"
                 android:text="NFC"
                 android:id="@+id/textView3"
                 android:layout_gravity="left" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:paddingLeft="16dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Small Text"
                 android:id="@+id/tvNFChelpTExt" />
@@ -58,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bNFCSettings"
+            android:layout_margin="8dp"
             android:layout_gravity="right"
             android:gravity="center_vertical"
             android:text="Settings"/>
