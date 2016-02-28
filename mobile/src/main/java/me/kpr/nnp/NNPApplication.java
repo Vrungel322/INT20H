@@ -1,6 +1,9 @@
 package me.kpr.nnp;
 
 import android.app.Application;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 
@@ -27,6 +30,8 @@ public class NNPApplication extends Application implements BootstrapNotifier {
             "2f234454-cf6d-4a0f-adf2-f4911ba9ffa6",
             "2f234454-cf6d-4a0f-adf2-f5011ba9ffa6"
     };
+    private Notification myNotication;
+    private NotificationManager manager;
 
     public RegionBootstrap regionBootstrap;
 
@@ -62,7 +67,33 @@ public class NNPApplication extends Application implements BootstrapNotifier {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra(MainActivity.EXTRA_BEACON_UUID, region.getId1().toHexString());
-        startActivity(intent);
+        //startActivity(intent);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        //TODO test notification
+        manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //Intent intent = getIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 1, intent, 0);
+        Notification.Builder builder = new Notification.Builder(getApplicationContext());
+
+        builder.setAutoCancel(false);
+        builder.setTicker("this is ticker text");
+        builder.setContentTitle("WhatsApp Notification");
+        builder.setContentText("You have a new message");
+        builder.setSmallIcon(R.drawable.def_logo);
+        builder.setContentIntent(pendingIntent);
+        builder.setSubText("This is subtext...");   //API level 16
+        builder.setNumber(100);
+        builder.build();
+
+        myNotication = builder.getNotification();
+        manager.notify(11, myNotication);
+        ////////////////////////////////////////////////////////////////////////////////////////////
+
+
     }
 
     @Override
